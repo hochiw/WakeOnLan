@@ -2,9 +2,11 @@
 //  ViewController.swift
 //  WakeOnLan
 //
-//  Created by TakoYaki on 15/7/2019.
-//  Copyright © 2019 Takohata. All rights reserved.
+//  Created by Hochiw on 15/7/2019.
+//  Copyright © 2019 Hochiw. All rights reserved.
 //
+//  Partial code are reproduction from https://github.com/jesper-lindberg/Awake 
+//  temporary AppIcon taken from https://play.google.com/store/apps/details?id=co.uk.mrwebb.wakeonlan&hl=en_US
 
 import UIKit
 
