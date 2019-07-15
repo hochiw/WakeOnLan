@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WakeOnLan" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MACアドレスを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTB-0c-8PL">
+                                <rect key="frame" x="28" y="120" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ボードキャスアドレスを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCY-bS-3fU">
+                                <rect key="frame" x="28" y="210" width="312" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MACアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-2q-TKy">
+                                <rect key="frame" x="28" y="91" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ボードキャスアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOQ-zW-mcH">
+                                <rect key="frame" x="28" y="181" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mF0-cm-zWo">
+                                <rect key="frame" x="232" y="291" width="108" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Wake"/>
+                                <connections>
+                                    <action selector="wakeBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Nk-Dr-6Cu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cTB-0c-8PL" firstAttribute="trailing" secondItem="eCY-bS-3fU" secondAttribute="trailing" id="0Sx-wu-sM4"/>
+                            <constraint firstItem="cTB-0c-8PL" firstAttribute="top" secondItem="b4Z-2q-TKy" secondAttribute="bottom" constant="8" symbolic="YES" id="1F5-TL-aS9"/>
+                            <constraint firstItem="AOQ-zW-mcH" firstAttribute="top" secondItem="cTB-0c-8PL" secondAttribute="bottom" constant="31" id="4nL-kF-oLE"/>
+                            <constraint firstItem="b4Z-2q-TKy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="C4r-rl-xAX"/>
+                            <constraint firstItem="AOQ-zW-mcH" firstAttribute="leading" secondItem="eCY-bS-3fU" secondAttribute="leading" id="D5e-WR-0XI"/>
+                            <constraint firstItem="cTB-0c-8PL" firstAttribute="leading" secondItem="AOQ-zW-mcH" secondAttribute="leading" id="DIl-m2-cAj"/>
+                            <constraint firstItem="b4Z-2q-TKy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="Sa9-ro-sZ3"/>
+                            <constraint firstItem="eCY-bS-3fU" firstAttribute="trailing" secondItem="mF0-cm-zWo" secondAttribute="trailing" id="ZF3-7t-44l"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mF0-cm-zWo" secondAttribute="trailing" constant="35" id="fGe-G3-p7J"/>
+                            <constraint firstItem="b4Z-2q-TKy" firstAttribute="leading" secondItem="cTB-0c-8PL" secondAttribute="leading" id="g2o-uz-rla"/>
+                            <constraint firstItem="eCY-bS-3fU" firstAttribute="top" secondItem="AOQ-zW-mcH" secondAttribute="bottom" constant="8" symbolic="YES" id="gAu-D4-9vO"/>
+                            <constraint firstItem="mF0-cm-zWo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="232" id="i6t-ar-utt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cTB-0c-8PL" secondAttribute="trailing" constant="35" id="k4w-lE-Aia"/>
+                            <constraint firstItem="mF0-cm-zWo" firstAttribute="top" secondItem="eCY-bS-3fU" secondAttribute="bottom" constant="51" id="pmC-Yf-2do"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="broadTextField" destination="eCY-bS-3fU" id="9G3-dL-goE"/>
+                        <outlet property="macTextField" destination="cTB-0c-8PL" id="y76-L7-Sih"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
 </document>

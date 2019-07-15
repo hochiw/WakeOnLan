@@ -40,6 +40,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if (shortcutItem.type == "com.takohata.WakeOnLan.wake") {
+            
+            let mac = UserDefaults.standard.string(forKey: "mac") ?? ""
+            let ip = UserDefaults.standard.string(forKey: "ip") ?? ""
+            
+            if (!ip.isEmpty && !mac.isEmpty) {
+                let view = ViewController()
+                view.wake(ip: ip,mac: mac, port: 9)
+                view.dismiss(animated:false,completion: nil)
+            }
+        }
+    }
 
 
 }
